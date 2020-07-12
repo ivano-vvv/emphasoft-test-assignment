@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import LoginWindowContainer from "./content__login-page";
+import LoginWindow from "../login-window";
 
 export default function Content(props) {
   const isAuth = useSelector((state) => state.auth.isAuth);
 
   if (!isAuth) {
-    return <LoginWindowContainer />;
+    return <LoginWindow className='content__login-window' />;
   }
 
   return <div>Auth is ok</div>;
