@@ -1,7 +1,28 @@
 .input {
+  position: relative;
+}
+
+.input__field {
   background: #e5e5e5;
   border: 1px solid #dbdbdb;
   border-radius: 4px;
   box-sizing: border-box;
-  padding: 4px 8px;
+  padding: 6px 10px;
+  width: 100%;
+}
+
+.input__field:focus {
+  outline: none;
+  box-shadow: 0 0 6px 0 #dbdbdb;
+}
+
+.input__field_error {
+  box-shadow: 0 0 0 2px #a81c1c;
+}
+
+.input__error-label {
+  position: absolute;
+  right: 0;
+  top: -22px;
+  color: #a81c1c;
 }

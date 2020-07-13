@@ -3,6 +3,7 @@ import { reduxForm, Field, Form } from "redux-form";
 import "./login-form.css";
 import Input from "./common/input";
 import Button from "./common/button";
+import required from "../validations/required";
 
 function LoginForm(props) {
   return (
@@ -20,6 +21,7 @@ function LoginForm(props) {
             name="username"
             component={Input}
             type="text"
+            validate={required}
           />
         </div>
         <div className="login-form__input-block">
@@ -31,10 +33,11 @@ function LoginForm(props) {
             name="password"
             component={Input}
             type="password"
+            validate={required}
           />
         </div>
       </div>
-      <Button type="submit" isFetching={false} >
+      <Button type="submit" isFetching={false} disabled={!props.valid}>
         Войти
       </Button>
     </Form>

@@ -5,7 +5,7 @@
 }
 
 .login-form__label {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .login-form__input {
@@ -13,7 +13,7 @@
 }
 
 .login-form__body {
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .login-form__input-block {
