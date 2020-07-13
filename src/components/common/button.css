@@ -5,7 +5,9 @@
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  padding: 8px 40px;
+  width: 128px;
+  height: 34px;
+  padding: 0;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -22,4 +24,36 @@
 
 .button:active {
   background: #4b72c5;
+}
+
+.button_fetching {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  cursor: default;
+}
+
+.button_fetching:hover,
+.button_fetching:active {
+  background: #5582e2;
+}
+
+.button:disabled {
+  background: #838383;
+  cursor: default;
+}
+
+.button__loader {
+  animation: button-fetching 2s linear infinite forwards;
+}
+
+@keyframes button-fetching {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

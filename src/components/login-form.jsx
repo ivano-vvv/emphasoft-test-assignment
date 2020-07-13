@@ -34,7 +34,9 @@ function LoginForm(props) {
           />
         </div>
       </div>
-      <Button type="submit">Войти</Button>
+      <Button type="submit" isFetching={false} >
+        Войти
+      </Button>
     </Form>
   );
 }
