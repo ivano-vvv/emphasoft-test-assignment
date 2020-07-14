@@ -38,3 +38,32 @@
 .login-form__login-error-label {
   color: #a81c1c;
 }
+
+.login-error-enter {
+  opacity: 0;
+  margin-bottom: 0;
+}
+
+.login-error-enter-active {
+  padding: 12px 20px;
+  opacity: 1;
+  margin-bottom: 24px;
+  transition: all 200ms ease-out;
+}
+
+.login-error-exit {
+  margin-bottom: 24px;
+  opacity: 1;
+}
+
+.login-error-exit-active {
+  height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+  padding: 0;
+  transition: all 200ms ease-in;
+}
+
+.login-error-exit-active .login-form__login-error-label {
+  font-size: 0;
+}

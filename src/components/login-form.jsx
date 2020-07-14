@@ -7,6 +7,7 @@ import required from "../validations/required";
 import authorizeUser from "../redux/thunks/authThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { hideLoginError } from "../redux/actions/loginFormActions";
+import { CSSTransition } from "react-transition-group";
 
 function LoginForm(props) {
   const dispatch = useDispatch();
@@ -54,13 +55,18 @@ function LoginForm(props) {
           />
         </div>
       </div>
-      {isLoginError && (
+      <CSSTransition
+        unmountOnExit
+        in={isLoginError}
+        timeout={200}
+        classNames="login-error"
+      >
         <div className="login-form__error-block">
           <span className="login-form__login-error-label text2">
             {loginErrorMessage}
           </span>
         </div>
-      )}
+      </CSSTransition>
       <Button
         type="submit"
         isFetching={props.submitting}
