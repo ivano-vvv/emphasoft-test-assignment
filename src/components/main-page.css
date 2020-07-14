@@ -1,0 +1,21 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-page__header {
+  flex: 0 0 auto;
+}
+
+.main-page__body {
+  flex: 1 0 auto;
+  margin: 0 auto;
+  padding: 4vh 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main-page__section {
+  width: 40vw;
+}

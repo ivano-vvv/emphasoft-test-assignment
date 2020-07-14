@@ -14,5 +14,5 @@ export default function Content(props) {
     return <LoginWindow className="app__login-window" />;
   }
 
-  return <MainPage />;
+  return <MainPage className="app__main-page" />;
 }

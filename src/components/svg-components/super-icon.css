@@ -1,0 +1,18 @@
+.superuser-icon {
+  position: relative;
+  margin: 0;
+}
+
+.superuser-icon__tooltip {
+  position: absolute;
+  left: 0;
+  top: -32px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.superuser-icon:hover .superuser-icon__tooltip {
+  visibility: visible;
+  opacity: 1;
+}

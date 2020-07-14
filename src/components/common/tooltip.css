@@ -1,0 +1,15 @@
+.tooltip {
+  box-sizing: border-box;
+  padding: 4px 6px;
+  background-color: #ebebeb;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(202, 202, 202, 0.4);
+}
+
+.tooltip__note {
+  white-space: nowrap;
+}

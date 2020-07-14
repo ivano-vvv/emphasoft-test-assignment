@@ -1,0 +1,27 @@
+.users-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: calc(100vh - 60px - 8vh);
+}
+
+.users-section__header {
+  margin-bottom: 32px;
+}
+
+.users-section__list {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  height: 100%;
+  padding: 24px 20px;
+  background-color: #cacaca;
+  border-radius: 8px;
+}
+
+.users-section__user-card {
+  margin-bottom: 24px;
+}
+
+.users-section__user-card:last-child {
+  margin-bottom: 0;
+}

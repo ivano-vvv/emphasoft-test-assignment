@@ -1,0 +1,17 @@
+.status-icon {
+  position: relative;
+}
+
+.status-icon__tooltip {
+  position: absolute;
+  left: 0;
+  top: -32px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.status-icon:hover .status-icon__tooltip {
+  visibility: visible;
+  opacity: 1;
+}

@@ -5,7 +5,7 @@ import LogOutButton from "./log-out-button";
 
 export default function Header(props) {
   return (
-    <header className="header">
+    <header className={"header " + props.className}>
       <div className="header__container container">
         <Logo className="header__logo" />
         <LogOutButton className="header__log-out" />
