@@ -51,14 +51,19 @@
 
 .user-card__name-block {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
 }
 
 .user-card__username {
   margin-right: 24px;
+  overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .user-card__name {
+  overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
