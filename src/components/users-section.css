@@ -10,6 +10,7 @@
 }
 
 .users-section__list {
+  position: relative;
   flex: 1 1 auto;
   overflow-y: auto;
   height: 100%;
@@ -24,4 +25,14 @@
 
 .users-section__user-card:last-child {
   margin-bottom: 0;
+}
+
+.users-section__empty-list {
+  text-align: center;
+  color: #888;
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
