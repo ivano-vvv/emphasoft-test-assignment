@@ -2,6 +2,7 @@ import React from "react";
 import "normalize.css";
 import "./styles/app.css";
 import "./styles/typography.css";
+import "./styles/layout.css";
 import Content from "./components/containers/app__content";
 
 export default function App() {

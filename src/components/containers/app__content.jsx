@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import LoginWindow from "../login-window";
 import { checkToken } from "../../redux/actions/authActions";
+import MainPage from "../main-page";
 
 export default function Content(props) {
   const dispatch = useDispatch();
@@ -13,5 +14,5 @@ export default function Content(props) {
     return <LoginWindow className="app__login-window" />;
   }
 
-  return <div>Auth is ok</div>;
+  return <MainPage />;
 }

@@ -1,0 +1,20 @@
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}

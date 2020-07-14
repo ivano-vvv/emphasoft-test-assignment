@@ -1,0 +1,35 @@
+.log-out-button {
+  border: none;
+  border-radius: 4px;
+  background: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.log-out-button__value {
+  margin-right: 6px;
+}
+
+.log-out-button__icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #0d0d0d;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.log-out-button__icon-arrow {
+  transition: 0.1s ease-out;
+}
+
+.log-out-button:focus {
+  outline: none;
+  box-shadow: 0 0 4px 0 rgba(44, 137, 173, 0.6);
+}
+
+.log-out-button:hover .log-out-button__icon-arrow {
+  transform: translateX(2px);
+}
