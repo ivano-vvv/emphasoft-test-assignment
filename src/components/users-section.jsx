@@ -10,7 +10,7 @@ export default function UsersSection(props) {
         <h2 className="users-section__heading h2">Пользователи</h2>
       </header>
       <div className="users-section__list">
-        {userListContent(props.users, true)}
+        {userListContent(props.users, props.isFetching)}
       </div>
     </section>
   );
