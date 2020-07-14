@@ -24,14 +24,16 @@ export default function UserCard(props) {
       <div className="user-card__name-block">
         <h3 className="h3 user-card__username">{props.username}</h3>
         <p className="text1 user-card__name">
-          / {getNameStr(props.first_name, props.last_name)}
+          {getNameStr(props.first_name, props.last_name)}
         </p>
       </div>
     </div>
   );
 
   function getNameStr(firstName, lastName) {
+    if (!firstName && !lastName) return "";
+
     let arr = [firstName || "", lastName || ""];
-    return arr.join(" ");
+    return `/  ${arr.join(" ")}`;
   }
 }
