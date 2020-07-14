@@ -30,7 +30,13 @@
 .users-section__empty-list {
   text-align: center;
   color: #888;
-  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.users-section__loader {
   position: absolute;
   top: 50%;
   left: 50%;

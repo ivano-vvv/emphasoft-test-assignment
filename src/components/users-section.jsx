@@ -1,6 +1,7 @@
 import React from "react";
 import "./users-section.css";
 import UserCard from "./user-card";
+import ListLoader from "./list-loader";
 
 export default function UsersSection(props) {
   return (
@@ -8,11 +9,15 @@ export default function UsersSection(props) {
       <header className="users-section__header">
         <h2 className="users-section__heading h2">Пользователи</h2>
       </header>
-      <div className="users-section__list">{userListContent(props.users)}</div>
+      <div className="users-section__list">
+        {userListContent(props.users, true)}
+      </div>
     </section>
   );
 
-  function userListContent(users) {
+  function userListContent(users, isFetching) {
+    if (isFetching) return <ListLoader className="users-section__loader" />;
+
     if (!users || users.length === 0)
       return (
         <h3 className="h3 users-section__empty-list">
