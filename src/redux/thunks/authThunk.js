@@ -15,8 +15,5 @@ export default function authorizeUser(username, password) {
         dispatch(showLoginError());
         dispatch(stopSubmit("login"));
       });
-    // получить токен
-    // вписать токен в sessionStorage
-    // сменить isAuth на false
   };
 }
