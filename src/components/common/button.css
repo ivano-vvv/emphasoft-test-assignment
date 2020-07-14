@@ -11,6 +11,7 @@
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
+  transition: background-color 100ms ease-in;
 }
 
 .button:focus {
