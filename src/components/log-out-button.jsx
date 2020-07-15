@@ -3,7 +3,10 @@ import "./log-out-button.css";
 
 export default function LogOutButton(props) {
   return (
-    <button className={"log-out-button " + props.className}>
+    <button
+      onClick={props.onClick}
+      className={"log-out-button " + props.className}
+    >
       <span className="text1 log-out-button__value">Выйти</span>
       <span>
         <svg

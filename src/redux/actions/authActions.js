@@ -12,3 +12,10 @@ export function checkToken() {
     type: CHECK_TOKEN,
   };
 }
+
+export const LOG_OUT = "LOG_OUT";
+export function logOut() {
+  return {
+    type: LOG_OUT,
+  };
+}
