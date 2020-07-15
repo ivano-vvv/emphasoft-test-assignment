@@ -12,6 +12,13 @@ export function turnOffLoader() {
   };
 }
 
+export const NOTIFY_OF_ERROR = "NOTIFY_OF_ERROR";
+export function notifyOfError() {
+  return {
+    type: NOTIFY_OF_ERROR,
+  };
+}
+
 export const SET_USERS = "SET_USERS";
 export function setUsers(users) {
   return {

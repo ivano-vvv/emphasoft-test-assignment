@@ -2,6 +2,7 @@ import {
   turnOnLoader,
   setUsers,
   turnOffLoader,
+  notifyOfError,
 } from "../actions/usersListActions";
 import { getUsersAPI } from "../../dataAccess/usersAPI";
 import { logOut } from "../actions/authActions";
@@ -15,13 +16,15 @@ export default function getUsers() {
         dispatch(turnOffLoader());
       })
       .catch((error) => {
+        console.log(error);
         if (error.response) {
           if (error.response.status === 401) {
             dispatch(logOut());
+          } else {
+            dispatch(notifyOfError());
           }
         }
+        dispatch(turnOffLoader());
       });
-    // f: else 'smth went wrong, try it later'
-    // f: turn off the loader
   };
 }

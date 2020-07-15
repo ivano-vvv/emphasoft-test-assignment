@@ -10,17 +10,22 @@ export default function UsersSection(props) {
         <h2 className="users-section__heading h2">Пользователи</h2>
       </header>
       <div className="users-section__list">
-        {userListContent(props.users, props.isFetching)}
+        {userListContent(props.users, props.isFetching, props.errorMessage)}
       </div>
     </section>
   );
 
-  function userListContent(users, isFetching) {
+  function userListContent(users, isFetching, errorMessage) {
     if (isFetching) return <ListLoader className="users-section__loader" />;
+
+    if (errorMessage)
+      return (
+        <h3 className="h3 users-section__list-notification">{errorMessage}</h3>
+      );
 
     if (!users || users.length === 0)
       return (
-        <h3 className="h3 users-section__empty-list">
+        <h3 className="h3 users-section__list-notification">
           Список пользователей пуст
         </h3>
       );

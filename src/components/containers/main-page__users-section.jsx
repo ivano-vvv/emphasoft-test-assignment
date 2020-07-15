@@ -6,10 +6,19 @@ import getUsers from "../../redux/thunks/usersListThunk";
 export default function UsersSectionContainer(props) {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.usersList.users);
+  const requestError = useSelector((state) => state.usersList.errorMessage);
 
-  if (!users || users.length === 0) dispatch(getUsers());
+  if ((!users || users.length === 0) && !requestError) dispatch(getUsers());
 
   const isFetching = useSelector((state) => state.usersList.isFetching);
+  const errorMessage = useSelector((state) => state.usersList.errorMessage);
 
-  return <UsersSection {...props} users={users} isFetching={isFetching} />;
+  return (
+    <UsersSection
+      {...props}
+      users={users}
+      isFetching={isFetching}
+      errorMessage={errorMessage}
+    />
+  );
 }
