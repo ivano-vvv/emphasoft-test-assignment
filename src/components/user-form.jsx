@@ -1,15 +1,21 @@
 import React from "react";
-import { reduxForm, Form, Field, initialize } from "redux-form";
+import { reduxForm, Form, Field } from "redux-form";
 import Input from "./common/input";
 import required from "../validations/required";
 import Button from "./common/button";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {
+  maxLength150,
+  maxLength128,
+  maxLength30,
+} from "../validations/maxLength";
+import {
+  usernamePatternValidate,
+  passwordPatternValidate,
+} from "../validations/patternValidations";
 
 function UserForm(props) {
   const dispatch = useDispatch();
-  const initialValues = useSelector((state) => state.usersForm.initialValues);
-
-  dispatch(initialize("user", initialValues, null, { keepValues: true }));
 
   function onSubmit(values) {
     console.log(values);
@@ -29,7 +35,7 @@ function UserForm(props) {
           name="username"
           component={Input}
           type="text"
-          validate={required}
+          validate={[required, maxLength150, usernamePatternValidate]}
         />
       </div>
       <div className="user-form__input-block">
@@ -41,7 +47,7 @@ function UserForm(props) {
           name="password"
           component={Input}
           type="password"
-          validate={required}
+          validate={[required, maxLength128, passwordPatternValidate]}
         />
       </div>
       <div className="user-form__input-block">
@@ -53,6 +59,7 @@ function UserForm(props) {
           name="first_name"
           component={Input}
           type="text"
+          validate={maxLength30}
         />
       </div>
       <div className="user-form__input-block">
@@ -64,6 +71,7 @@ function UserForm(props) {
           name="last_name"
           component={Input}
           type="text"
+          validate={maxLength150}
         />
       </div>
       <div className="user-form__checkbox-block">

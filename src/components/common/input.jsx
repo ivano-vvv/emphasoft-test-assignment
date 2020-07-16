@@ -19,7 +19,9 @@ export default function Input(props) {
         autoComplete="off"
       />
       {props.meta.touched && (
-        <span className="text2 input__error-label">{props.meta.error}</span>
+        <span className="text2 input__error-label">
+          {props.meta.error || props.meta.warning}
+        </span>
       )}
     </div>
   );
