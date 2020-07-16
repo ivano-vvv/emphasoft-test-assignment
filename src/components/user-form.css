@@ -25,5 +25,10 @@
 }
 
 .user-form__checkbox-block {
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+
+.user-form__checkbox {
+  margin-right: 4px;
 }
