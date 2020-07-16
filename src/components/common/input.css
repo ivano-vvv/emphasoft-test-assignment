@@ -25,4 +25,6 @@
   right: 0;
   top: -22px;
   color: #a81c1c;
+  text-align: right;
+  max-width: 120px;
 }
