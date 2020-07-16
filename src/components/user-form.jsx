@@ -14,6 +14,8 @@ import {
   usernamePatternValidate,
   passwordPatternValidate,
 } from "../validations/patternValidations";
+import { minLength8 } from "../validations/minLength";
+import { hasCapLetter, hasDigit } from "../validations/passwordValidation";
 
 function UserForm(props) {
   const dispatch = useDispatch();
@@ -49,7 +51,14 @@ function UserForm(props) {
             name="password"
             component={Input}
             type="password"
-            validate={[required, maxLength128, passwordPatternValidate]}
+            validate={[
+              required,
+              minLength8,
+              hasCapLetter,
+              hasDigit,
+              maxLength128,
+              passwordPatternValidate,
+            ]}
           />
         </div>
         <div className="user-form__input-block">

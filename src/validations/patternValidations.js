@@ -6,6 +6,6 @@ export function usernamePatternValidate(value) {
 
 export function passwordPatternValidate(value) {
   return value && !/^(?=.*[A-Z])(?=.*\d).{8,}$/.test(value)
-    ? "Мин. 8 знаков, первый — заглавная, посл. — цифра"
+    ? "Недопустимые символы"
     : undefined;
 }
