@@ -1,15 +1,18 @@
 import React from "react";
 import "./users-section.css";
+import "./section.css";
 import UserCard from "./user-card";
 import ListLoader from "./list-loader";
 
 export default function UsersSection(props) {
   return (
-    <section className={"users-section " + props.className}>
-      <header className="users-section__header">
-        <h2 className="users-section__heading h2">Пользователи</h2>
+    <section className={"users-section section " + props.className}>
+      <header className="users-section__header section__header">
+        <h2 className="users-section__heading section__heading h2">
+          Пользователи
+        </h2>
       </header>
-      <div className="users-section__list">
+      <div className="users-section__list section__body">
         {userListContent(props.users, props.isFetching, props.errorMessage)}
       </div>
     </section>
