@@ -1,6 +1,7 @@
 import React from "react";
 import "./form-section.css";
 import "./section.css";
+import UserFormContainer from "./form-section__user-form";
 
 export default function FormSection(props) {
   return (
@@ -16,6 +17,9 @@ export default function FormSection(props) {
             Редактировать пользователя
           </h2>
         )}
+      </div>
+      <div className="section__body form-section__body">
+        <UserFormContainer />
       </div>
     </section>
   );
