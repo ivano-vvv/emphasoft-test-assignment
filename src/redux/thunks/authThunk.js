@@ -1,4 +1,4 @@
-import { startSubmit, stopSubmit, setSubmitFailed } from "redux-form";
+import { startSubmit, stopSubmit } from "redux-form";
 import getAuthTokenAPI from "../../dataAccess/authAPI";
 import { saveToken } from "../actions/authActions";
 import { showLoginError } from "../actions/loginFormActions";

@@ -4,7 +4,7 @@ import { reduxForm, Form, Field } from "redux-form";
 import Input from "./common/input";
 import required from "../validations/required";
 import Button from "./common/button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   maxLength150,
   maxLength128,
@@ -16,12 +16,13 @@ import {
 } from "../validations/patternValidations";
 import { minLength8 } from "../validations/minLength";
 import { hasCapLetter, hasDigit } from "../validations/passwordValidation";
+import { addUser } from "../redux/thunks/userFormThunk";
 
 function UserForm(props) {
   const dispatch = useDispatch();
 
   function onSubmit(values) {
-    console.log(values);
+    dispatch(addUser(values));
   }
 
   return (

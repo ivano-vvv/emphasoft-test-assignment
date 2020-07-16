@@ -14,5 +14,7 @@ export default function FormSectionContainer(props) {
     })
   );
 
-  return <FormSection {...props} isEditMode={isEditMode} />;
+  return (
+    <FormSection {...props} isEditMode={isEditMode} />
+  );
 }
