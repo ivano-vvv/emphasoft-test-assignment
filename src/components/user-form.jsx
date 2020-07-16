@@ -1,10 +1,16 @@
 import React from "react";
-import { reduxForm, Form, Field } from "redux-form";
+import { reduxForm, Form, Field, initialize } from "redux-form";
 import Input from "./common/input";
 import required from "../validations/required";
 import Button from "./common/button";
+import { useDispatch, useSelector } from "react-redux";
 
 function UserForm(props) {
+  const dispatch = useDispatch();
+  const initialValues = useSelector((state) => state.usersForm.initialValues);
+
+  dispatch(initialize("user", initialValues, null, { keepValues: true }));
+
   function onSubmit(values) {
     console.log(values);
   }
