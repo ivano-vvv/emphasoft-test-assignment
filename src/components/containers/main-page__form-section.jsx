@@ -1,6 +1,9 @@
 import React from "react";
 import FormSection from "../form-section";
+import { useSelector } from "react-redux";
 
 export default function FormSectionContainer(props) {
-  return <FormSection {...props} />;
+  const isEditMode = useSelector((state) => state.usersForm.isEditMode);
+
+  return <FormSection {...props} isEditMode={isEditMode} />;
 }
