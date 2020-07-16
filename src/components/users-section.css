@@ -17,6 +17,7 @@
   padding: 24px 20px;
   background-color: #cacaca;
   border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(160, 160, 160, 0.6);
 }
 
 .users-section__user-card {
