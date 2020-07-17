@@ -26,13 +26,15 @@ const usersAPI = {
     return this._API().get(`/${id}`);
   },
 
-  _token: sessionStorage.getItem("token"),
+  _token() {
+    return sessionStorage.getItem("token");
+  },
   _API() {
     return axios.create({
       baseURL: "https://emphasoft-test-assignment.herokuapp.com/api/v1/users/",
       timeout: 10000,
       headers: {
-        Authorization: `Token ${this._token}`,
+        Authorization: `Token ${this._token()}`,
       },
     });
   },
