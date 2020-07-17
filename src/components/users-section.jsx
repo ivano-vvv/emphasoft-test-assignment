@@ -13,12 +13,17 @@ export default function UsersSection(props) {
         </h2>
       </header>
       <div className="users-section__list section__body">
-        {userListContent(props.users, props.isFetching, props.errorMessage)}
+        {userListContent(
+          props.users,
+          props.isFetching,
+          props.errorMessage,
+          props.onUserCardClick
+        )}
       </div>
     </section>
   );
 
-  function userListContent(users, isFetching, errorMessage) {
+  function userListContent(users, isFetching, errorMessage, onCardClick) {
     if (isFetching) return <ListLoader className="users-section__loader" />;
 
     if (errorMessage)
@@ -34,8 +39,13 @@ export default function UsersSection(props) {
       );
 
     return props.users.map((u) => {
+      function onClick() {
+        return onCardClick(u.id);
+      }
+
       return (
         <UserCard
+          onClick={onClick}
           key={u.id}
           id={u.id}
           username={u.username}

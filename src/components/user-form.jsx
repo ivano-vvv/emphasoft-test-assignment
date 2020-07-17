@@ -4,7 +4,7 @@ import { reduxForm, Form, Field } from "redux-form";
 import Input from "./common/input";
 import required from "../validations/required";
 import Button from "./common/button";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   maxLength150,
   maxLength128,
@@ -47,20 +47,28 @@ function UserForm(props) {
           <label className="user-form__label text2" htmlFor="username">
             Пароль
           </label>
-          <Field
-            className="user-form__input"
-            name="password"
-            component={Input}
-            type="password"
-            validate={[
-              required,
-              minLength8,
-              hasCapLetter,
-              hasDigit,
-              maxLength128,
-              passwordPatternValidate,
-            ]}
-          />
+          {!props.isEditMode ? (
+            <Field
+              className="user-form__input"
+              name="password"
+              component={Input}
+              type="password"
+              validate={[
+                required,
+                minLength8,
+                hasCapLetter,
+                hasDigit,
+                maxLength128,
+                passwordPatternValidate,
+              ]}
+            />
+          ) : (
+            <Input
+              disabled={true}
+              className="user-form__input"
+              value="••••••••"
+            />
+          )}
         </div>
         <div className="user-form__input-block">
           <label className="user-form__label text2" htmlFor="username">
@@ -99,6 +107,11 @@ function UserForm(props) {
             Пользователь активен
           </label>
         </div>
+        {props.isEditMode && (
+          <Button onClick={props.handleCancel} appearance="accent">
+            Отменить
+          </Button>
+        )}
         <Button
           type="submit"
           isFetching={props.submitting}
