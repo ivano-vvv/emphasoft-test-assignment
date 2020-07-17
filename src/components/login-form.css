@@ -67,3 +67,7 @@
 .login-error-exit-active .login-form__login-error-label {
   font-size: 0;
 }
+
+.login-form__button {
+  margin: 0 auto;
+}

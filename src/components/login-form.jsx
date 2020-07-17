@@ -71,6 +71,7 @@ function LoginForm(props) {
         type="submit"
         isFetching={props.submitting}
         disabled={!props.valid}
+        className="login-form__button"
       >
         Войти
       </Button>
