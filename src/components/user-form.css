@@ -5,13 +5,13 @@
 }
 
 .user-form__input {
-  width: calc(22vw - 28px); /* the first value is a width of sections */
-  max-width: 372px;
-  margin-top: 8px;
+  width: calc(22vw - 36px); /* the first value is a width of sections */
+  max-width: 368px;
+  margin-top: 20px;
 }
 
 .user-form__input-block {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .user-form__text-inputs {

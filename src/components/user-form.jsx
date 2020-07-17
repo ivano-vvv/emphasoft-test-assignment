@@ -36,7 +36,7 @@ function UserForm(props) {
     >
       <div className="user-form__text-inputs">
         <div className="user-form__input-block">
-          <label className="user-form__label text2" htmlFor="username">
+          <label className="user-form__label text1" htmlFor="username">
             Имя пользователя
           </label>
           <Field
@@ -48,7 +48,7 @@ function UserForm(props) {
           />
         </div>
         <div className="user-form__input-block">
-          <label className="user-form__label text2" htmlFor="username">
+          <label className="user-form__label text1" htmlFor="username">
             Пароль
           </label>
           <Field
@@ -67,7 +67,7 @@ function UserForm(props) {
           />
         </div>
         <div className="user-form__input-block">
-          <label className="user-form__label text2" htmlFor="username">
+          <label className="user-form__label text1" htmlFor="username">
             Имя
           </label>
           <Field
@@ -79,7 +79,7 @@ function UserForm(props) {
           />
         </div>
         <div className="user-form__input-block">
-          <label className="user-form__label text2" htmlFor="username">
+          <label className="user-form__label text1" htmlFor="username">
             Фамилия
           </label>
           <Field
@@ -99,7 +99,7 @@ function UserForm(props) {
             component="input"
             type="checkbox"
           />
-          <label className="user-form__label text2" htmlFor="username">
+          <label className="user-form__label text1" htmlFor="username">
             Пользователь активен
           </label>
         </div>
