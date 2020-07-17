@@ -32,3 +32,13 @@
 .user-form__checkbox {
   margin-right: 4px;
 }
+
+.user-form__button-block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-form__button_cancel {
+  margin-right: 12px;
+}

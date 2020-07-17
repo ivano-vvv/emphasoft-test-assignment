@@ -11,7 +11,7 @@
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
-  transition: background-color 100ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 .button:focus {
@@ -25,6 +25,20 @@
 
 .button:active {
   background: #4b72c5;
+}
+
+.button_accent {
+  background: #fff;
+  color: #5582e2;
+  border: 2px solid #5582e2;
+}
+
+.button_accent:hover {
+  background: #f0f0f0;
+}
+
+.button_accent:active {
+  opacity: none;
 }
 
 .button_fetching {

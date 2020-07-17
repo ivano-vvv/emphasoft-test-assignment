@@ -107,18 +107,20 @@ function UserForm(props) {
             Пользователь активен
           </label>
         </div>
-        {props.isEditMode && (
-          <Button onClick={props.handleCancel} appearance="accent">
-            Отменить
+        <div className="user-form__button-block">
+          {props.isEditMode && (
+            <Button onClick={props.handleCancel} className="user-form__button_cancel" appearance="accent">
+              Отменить
+            </Button>
+          )}
+          <Button
+            type="submit"
+            isFetching={props.submitting}
+            disabled={!props.valid}
+          >
+            {props.isEditMode ? "Сохранить" : "Добавить"}
           </Button>
-        )}
-        <Button
-          type="submit"
-          isFetching={props.submitting}
-          disabled={!props.valid}
-        >
-          {props.isEditMode ? "Сохранить" : "Добавить"}
-        </Button>
+        </div>
       </div>
     </Form>
   );
