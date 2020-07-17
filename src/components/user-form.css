@@ -6,7 +6,7 @@
 
 .user-form__input {
   width: calc(22vw - 28px); /* the first value is a width of sections */
-  max-width: 500px;
+  max-width: 372px;
   margin-top: 8px;
 }
 
