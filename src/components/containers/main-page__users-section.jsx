@@ -1,7 +1,7 @@
 import React from "react";
 import UsersSection from "../users-section";
 import { useSelector, useDispatch } from "react-redux";
-import getUsers from "../../redux/thunks/usersListThunk";
+import getUsers, { getUserForEdit } from "../../redux/thunks/usersListThunk";
 
 export default function UsersSectionContainer(props) {
   const dispatch = useDispatch();
@@ -13,12 +13,17 @@ export default function UsersSectionContainer(props) {
   const isFetching = useSelector((state) => state.usersList.isFetching);
   const errorMessage = useSelector((state) => state.usersList.errorMessage);
 
+  function onUserCardClick(id) {
+    return dispatch(getUserForEdit(id));
+  }
+
   return (
     <UsersSection
       {...props}
       users={users}
       isFetching={isFetching}
       errorMessage={errorMessage}
+      onUserCardClick={onUserCardClick}
     />
   );
 }

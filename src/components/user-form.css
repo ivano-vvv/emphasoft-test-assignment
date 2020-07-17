@@ -1,0 +1,44 @@
+.user-form__text-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-form__input {
+  width: calc(22vw - 28px); /* the first value is a width of sections */
+  max-width: 500px;
+  margin-top: 8px;
+}
+
+.user-form__input-block {
+  margin-bottom: 16px;
+}
+
+.user-form__text-inputs {
+  margin-bottom: 32px; /* + 16px with __input-block margin */
+}
+
+.user-form__submit-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-form__checkbox-block {
+  display: flex;
+  align-items: center;
+}
+
+.user-form__checkbox {
+  margin-right: 4px;
+}
+
+.user-form__button-block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-form__button_cancel {
+  margin-right: 12px;
+}

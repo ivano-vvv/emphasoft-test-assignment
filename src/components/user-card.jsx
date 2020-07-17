@@ -5,7 +5,7 @@ import SuperIcon from "./svg-components/super-icon";
 
 export default function UserCard(props) {
   return (
-    <div className={"user-card " + props.className}>
+    <button onClick={props.onClick} className={"user-card " + props.className}>
       <div className="user-card__status-bar">
         <StatusIcon
           className="user-card__status-icon"
@@ -27,7 +27,7 @@ export default function UserCard(props) {
           {getNameStr(props.first_name, props.last_name)}
         </p>
       </div>
-    </div>
+    </button>
   );
 
   function getNameStr(firstName, lastName) {

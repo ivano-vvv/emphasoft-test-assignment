@@ -1,0 +1,8 @@
+.section__header {
+  margin-bottom: 32px;
+}
+
+.section__body {
+  padding: 24px 20px;
+  border-radius: 8px;
+}

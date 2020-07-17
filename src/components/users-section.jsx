@@ -1,21 +1,29 @@
 import React from "react";
 import "./users-section.css";
+import "./section.css";
 import UserCard from "./user-card";
 import ListLoader from "./list-loader";
 
 export default function UsersSection(props) {
   return (
-    <section className={"users-section " + props.className}>
-      <header className="users-section__header">
-        <h2 className="users-section__heading h2">Пользователи</h2>
+    <section className={"users-section section " + props.className}>
+      <header className="users-section__header section__header">
+        <h2 className="users-section__heading section__heading h2">
+          Пользователи
+        </h2>
       </header>
-      <div className="users-section__list">
-        {userListContent(props.users, props.isFetching, props.errorMessage)}
+      <div className="users-section__list section__body">
+        {userListContent(
+          props.users,
+          props.isFetching,
+          props.errorMessage,
+          props.onUserCardClick
+        )}
       </div>
     </section>
   );
 
-  function userListContent(users, isFetching, errorMessage) {
+  function userListContent(users, isFetching, errorMessage, onCardClick) {
     if (isFetching) return <ListLoader className="users-section__loader" />;
 
     if (errorMessage)
@@ -31,8 +39,13 @@ export default function UsersSection(props) {
       );
 
     return props.users.map((u) => {
+      function onClick() {
+        return onCardClick(u.id);
+      }
+
       return (
         <UserCard
+          onClick={onClick}
           key={u.id}
           id={u.id}
           username={u.username}
