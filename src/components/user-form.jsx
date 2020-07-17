@@ -16,13 +16,17 @@ import {
 } from "../validations/patternValidations";
 import { minLength8 } from "../validations/minLength";
 import { hasCapLetter, hasDigit } from "../validations/passwordValidation";
-import { addUser } from "../redux/thunks/userFormThunk";
+import { addUser, updateUserData } from "../redux/thunks/userFormThunk";
 
 function UserForm(props) {
   const dispatch = useDispatch();
 
   function onSubmit(values) {
-    dispatch(addUser(values));
+    if (props.isEditMode) {
+      dispatch(updateUserData(values));
+    } else {
+      dispatch(addUser(values));
+    }
   }
 
   return (
@@ -47,28 +51,20 @@ function UserForm(props) {
           <label className="user-form__label text2" htmlFor="username">
             Пароль
           </label>
-          {!props.isEditMode ? (
-            <Field
-              className="user-form__input"
-              name="password"
-              component={Input}
-              type="password"
-              validate={[
-                required,
-                minLength8,
-                hasCapLetter,
-                hasDigit,
-                maxLength128,
-                passwordPatternValidate,
-              ]}
-            />
-          ) : (
-            <Input
-              disabled={true}
-              className="user-form__input"
-              value="••••••••"
-            />
-          )}
+          <Field
+            className="user-form__input"
+            name="password"
+            component={Input}
+            type="password"
+            validate={[
+              required,
+              minLength8,
+              hasCapLetter,
+              hasDigit,
+              maxLength128,
+              passwordPatternValidate,
+            ]}
+          />
         </div>
         <div className="user-form__input-block">
           <label className="user-form__label text2" htmlFor="username">
@@ -109,7 +105,11 @@ function UserForm(props) {
         </div>
         <div className="user-form__button-block">
           {props.isEditMode && (
-            <Button onClick={props.handleCancel} className="user-form__button_cancel" appearance="accent">
+            <Button
+              onClick={props.handleCancel}
+              className="user-form__button_cancel"
+              appearance="accent"
+            >
               Отменить
             </Button>
           )}

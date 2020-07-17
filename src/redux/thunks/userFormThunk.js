@@ -1,6 +1,12 @@
 import { createUserAPI, updateUserDataAPI } from "../../dataAccess/usersAPI";
 import getUsers from "./usersListThunk";
-import { startSubmit, stopSubmit, reset, clearFields, initialize } from "redux-form";
+import {
+  startSubmit,
+  stopSubmit,
+  reset,
+  clearFields,
+  initialize,
+} from "redux-form";
 import {
   switchAddForm,
   switchOnFormFetching,
@@ -23,13 +29,13 @@ export function addUser(values) {
   };
 }
 
-export function updateUserData(id, values) {
+export function updateUserData(values) {
   return (dispatch) => {
     dispatch(startSubmit("user"));
-    updateUserDataAPI(id, values)
+    updateUserDataAPI(values)
       .then(() => {
         dispatch(stopSubmit("user"));
-        dispatch(reset("user"));
+        dispatch(resetUserForm());
         dispatch(getUsers());
       })
       .catch((err) => {

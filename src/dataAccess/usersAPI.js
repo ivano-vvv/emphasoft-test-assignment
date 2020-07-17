@@ -10,16 +10,16 @@ const usersAPI = {
       first_name: values.first_name,
       last_name: values.last_name,
       password: values.password,
-      is_active: values.is_active,
+      is_active: values.is_active || false,
     });
   },
-  updateUserData(id, values) {
-    return this._API().put(`/${id}`, {
+  updateUserData(values) {
+    return this._API().put(`/${values.id}/`, {
       username: values.username,
       first_name: values.first_name,
       last_name: values.last_name,
       password: values.password,
-      is_active: values.is_active,
+      is_active: values.is_active || false,
     });
   },
   getUserData(id) {
