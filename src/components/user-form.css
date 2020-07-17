@@ -5,8 +5,8 @@
 }
 
 .user-form__input {
-  width: calc(22vw - 36px); /* the first value is a width of sections */
-  max-width: 368px;
+  width: calc(22vw - 28px); /* the first value is a width of sections */
+  max-width: 372px;
   margin-top: 20px;
 }
 
@@ -41,4 +41,59 @@
 
 .user-form__button_cancel {
   margin-right: 12px;
+}
+
+@media only screen and (max-width: 1120px) {
+  .user-form__submit-block {
+    flex-direction: column;
+  }
+
+  .user-form__input {
+    margin-top: 16px;
+  }
+
+  .user-form__input-block {
+    margin-bottom: 20px;
+  }
+
+  .user-form__checkbox-block {
+    margin-bottom: 28px;
+  }
+
+  .user-form__text-inputs {
+    margin-bottom: 20px; /* + 16px with __input-block margin */
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .user-form__text-inputs {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .user-form__input {
+    width: calc(44vw - 48px);
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .user-form__input {
+    width: calc(46vw - 28px);
+  }
+
+  .user-form__text-inputs {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .user-form__text-inputs {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .user-form__input {
+    width: calc(92vw - 48px);
+  }
 }
