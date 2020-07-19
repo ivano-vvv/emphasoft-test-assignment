@@ -1,5 +1,7 @@
 # Emphasoft — тестовое задание
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a033132d-647f-4cb8-9a1f-0b1afed74f22/deploy-status)](https://app.netlify.com/sites/emphasoft-test/deploys)
+
 ### Задача
 Разработать SPA с адаптивной версткой на основе [Emphasoft Test API](https://emphasoft-test-assignment.herokuapp.com/swagger/) со следующим функционалом:
 
