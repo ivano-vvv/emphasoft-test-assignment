@@ -75,7 +75,7 @@ function UserForm(props) {
             name="first_name"
             component={Input}
             type="text"
-            validate={maxLength30}
+            validate={[required, maxLength30]}
           />
         </div>
         <div className="user-form__input-block">
@@ -87,7 +87,7 @@ function UserForm(props) {
             name="last_name"
             component={Input}
             type="text"
-            validate={maxLength150}
+            validate={[required, maxLength150]}
           />
         </div>
       </div>
