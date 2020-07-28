@@ -20,6 +20,10 @@
   box-shadow: 0 0 0 2px #a81c1c;
 }
 
+.input__field_error:focus {
+  box-shadow: 0 0 0 2px #a81c1c;
+}
+
 .input__error-label {
   position: absolute;
   right: 0;
